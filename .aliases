@@ -1,0 +1,171 @@
+####### CUSTOM ########
+
+alias compile-thesis='mdmerge -o thesis.md outline.md; p3 compile_thesis.py'
+alias watch-thesis="watch -d -n 15 'mdmerge -o thesis.md outline.md; python compile_thesis.py'"
+alias strat='strat.sh'
+alias newstrat='newstrat.sh'
+alias server='python3 -m http.server'
+alias advice='advice.sh'
+
+
+####### GENERAL #######
+
+alias rebash='source ~/.bash_profile'
+alias rezsh='source ~/.zshrc'
+alias na='sublime ~/.aliases'
+alias new-alias='sublime ~/.aliases'
+alias aliases='sublime ~/.aliases'
+alias bash_profile='sublime ~/.bash_profile'
+alias zsh_profile='sublime ~/.zshrc'
+alias zshrc='sublime ~/.zshrc'
+alias addheretopath='export PATH=$PATH:`pwd`'
+alias start-tmux="tmux -CC new-session -A -s work-session" # git alias g="git"
+alias ls='ls -FG'
+alias lsa='ls -FGa'
+alias lsl='ls -FGal'
+alias codei='code-insiders'
+alias openf="open -a Finder"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+alias ........="cd ../../../../../../.."
+alias .........="cd ../../../../../../../.."
+alias ..........="cd ../../../../../../../../.."
+alias ...........="cd ../../../../../../../../../.."
+alias ............="cd ../../../../../../../../../../.."
+
+alias ll='ls -halt'
+alias la='ls -A'
+alias l='ls -acfltrh' #-CFlh'
+alias ld="ls -alF | grep /$"
+
+alias o=open
+# alias f=fzf
+alias rg='rg --hidden -i'
+alias jl='jupyter lab'
+
+######### PYTHON ##########
+
+alias p2='python'
+alias p3='python3'
+
+######### WEB ##########
+alias ybs='yarn build; yarn serve'
+
+####### DIRECTORIES #######
+
+alias home='cd ~'
+alias root='cd /'
+alias dtop='cd ~/Desktop'
+alias box='cd ~/Dropbox'
+alias drive='cd ~/Google\ Drive'
+alias ctrl='cd ~/Documents/ctrl/src'
+alias sublime_builds='cd /Users/spencerw/Library/Application\ Support/Sublime\ Text\ 3/Packages/User'
+alias website='cd /Users/spencerw/Library/Mobile\ Documents/com~apple~CloudDocs/spewil.github.io'
+alias motor='cd /Users/spencerw/Google\ Drive/motor_control'
+alias control='cd /Users/spencerw/Google\ Drive/motor_control/code/control_toolbox'
+
+####### CONDA #######
+
+alias bmi='conda activate bmi'
+alias data='conda activate data'
+alias game='conda activate game'
+alias teaching='conda activate teaching'
+alias dc='conda deactivate'
+alias ac='conda activate'
+alias clp='conda list'
+alias cle='conda env list'
+
+####### GIT ########
+
+alias ga="git add"
+alias gaa="ga ."
+alias gb="git branch"
+alias gba="git branch -a"
+alias gbd="git branch -d"
+alias gbdr="git push origin --delete"
+gbcr() { # gbcr branchname [upstream/branchname]
+  # 'gbcr workingbranch' clones origin/workingbranch to workingbranch
+  # 'gbcr workingbranch upstream/workingbranch' clones upstream/workingbranch to workingbranch
+  if [ -n "$2" ]
+  then
+    git branch $1 remotes/$2
+    #git branch $1 && git branch --set-upstream-to=$2 $1
+    #git checkout -b $1 $2
+  else
+    git branch $1 remotes/origin/$1
+    #git branch $1 && git branch --set-upstream-to=origin/$1 $1
+    #git checkout -b $1 origin/$1
+  fi
+}
+alias gc="git commit"
+alias gcm="gc -m"
+alias gph="git push"
+alias gpl="git pull"
+alias gca="git commit -a"
+alias gcam="gca -m"
+alias gco="git checkout"
+alias gcom="gco master"
+alias gco-="gco -"
+alias gl="git log --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr)%Creset %Cblue[%an]%Creset' --date=relative"
+alias gcp="git cherry-pick"
+alias gs="git status"
+alias gsb="gs -sb"
+alias gst="git stash"
+alias gf="git fetch"
+alias gm="git merge"
+alias gg="git grep" # gg pattern [dir]
+alias ggi="gg -i"
+gls() { # gls pattern [dir]
+  if [ -n "$2" ]
+  then
+    git ls-files $2 | grep -i $1
+  else
+    git ls-files . | grep -i $1
+  fi
+}
+alias gpsh="git push --tags"
+alias gpl="git pull"
+gplo() { # gplo [branchname] # defaults to current branch
+  set -ie
+  if [ -n "$1" ]
+  then
+    gpl origin $1
+  else
+    gpl origin $(detect_git_branch)
+  fi
+}
+gpsho(){ # gpsho [branchname] # defaults to current branch
+  if [ -n "$1" ]
+  then
+    gpsh origin $1
+  else
+    gpsh origin $(detect_git_branch)
+  fi
+}
+alias gd="git diff --color"
+alias gdpat="gd --patience"
+alias gds="gd --stat"
+alias gdl="gl --cherry-pick"
+alias gdh="gd HEAD"
+alias gdh1="gd HEAD~1"
+alias gdm="gd master"
+grto() { # grto [object] # defaults to origin
+  if [ -n "$1" ]
+  then
+    git reset --hard $1
+  else
+    git rest --hard origin
+  fi
+}
+alias gt="git tag"
+alias gsh="git show --color"
+alias gshs="gsh -s"
+alias gshst="gsh --stat"
+alias gbl="git blame --date=short"
+
+alias v="vim -O"

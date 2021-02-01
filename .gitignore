@@ -1,0 +1,11 @@
+*
+*/
+/*
+!.gitignore
+!.vimrc
+!.bashrc
+!.bash_profile
+!.aliases
+!.zshrc
+!.zshenv
+!.vim/
