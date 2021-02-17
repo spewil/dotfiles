@@ -1,12 +1,11 @@
 ####### CUSTOM ########
 
-alias compile-thesis='mdmerge -o thesis.md outline.md; p3 compile_thesis.py'
+alias compile-thesis='p3 compile_thesis.py'
 alias watch-thesis="watch -d -n 15 'mdmerge -o thesis.md outline.md; python compile_thesis.py'"
 alias strat='strat.sh'
 alias newstrat='newstrat.sh'
 alias server='python3 -m http.server'
 alias advice='advice.sh'
-
 
 ####### GENERAL #######
 
@@ -52,6 +51,7 @@ alias jl='jupyter lab'
 
 alias p2='python'
 alias p3='python3'
+alias new-env='conda create --name'
 
 ######### WEB ##########
 alias ybs='yarn build; yarn serve'
@@ -79,6 +79,7 @@ alias dc='conda deactivate'
 alias ac='conda activate'
 alias clp='conda list'
 alias cle='conda env list'
+alias conda-export='conda env export > environment.yml'
 
 ####### GIT ########
 
