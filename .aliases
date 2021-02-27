@@ -17,6 +17,7 @@ alias aliases='sublime ~/.aliases'
 alias bash_profile='sublime ~/.bash_profile'
 alias zsh_profile='sublime ~/.zshrc'
 alias zshrc='sublime ~/.zshrc'
+alias p10k='sublime ~/.p10k.zsh'
 alias addheretopath='export PATH=$PATH:`pwd`'
 alias start-tmux="tmux -CC new-session -A -s work-session" # git alias g="git"
 alias ls='ls -FG'

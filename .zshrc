@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 source /Users/spencerw/miniconda3/etc/profile.d/conda.sh
@@ -9,7 +16,8 @@ export ZSH="/Users/spencerw/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -69,13 +77,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git
-         brew
-         osx
-         web-search
-         zsh-autosuggestions
-         zsh-syntax-highlighting
-         vi-mode)
+# plugins=(git
+         # brew
+         # osx
+         # web-search
+         # zsh-autosuggestions
+         # zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -147,7 +154,7 @@ ENDCOLOR="\e[0m"
 # export PS1="$STARTFGCOLOR$STARTBGCOLOR \t \u@\h\$(parse_git_branch) \W $ENDCOLOR\n>\[$(tput sgr0)\]"
 
 # history
-HISTSIZE=5000
+HISTSIZE=500
 HISTFILESIZE=10000
 # shopt -s histappend
 
@@ -199,3 +206,6 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # export PATH="/usr/local/sbin:$PATH"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
