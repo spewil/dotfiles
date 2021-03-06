@@ -170,4 +170,10 @@ alias gshs="gsh -s"
 alias gshst="gsh --stat"
 alias gbl="git blame --date=short"
 
+# this is a crazy command to strip a file from your commit history
+# need to make this a function
+# git filter-branch --prune-empty -d ./scratch \
+  # --index-filter "git rm --cached -f --ignore-unmatch *.pkl" \
+  # --tag-name-filter cat -- --all
+
 alias v="vim -O"
